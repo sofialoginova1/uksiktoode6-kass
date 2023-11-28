@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Üksiktoode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="uksiktoode2-kass.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg cvet1">
+    <div class="container-fluid">
+        <img class="navbar-brand mx-auto" src="https://sun9-64.userapi.com/impg/f1rDv_9zQRyXSHuAmyAzexGZk0pOe8bJHlWRcQ/ouWhPUy6dQ0.jpg?size=716x126&quality=96&sign=f950c8824b2d88b8584d9ccca1cf9b47&type=album" height="70px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item nav-tekst">
+                    <a class="nav-link" aria-current="page" href="https://prikoljuha.github.io/ITI0105-2023-kassi-kost-mid/">Kassi kostüümid</a>
+                </li>
+                <li class="nav-item nav-tekst">
+                    <a class="nav-link" aria-current="page" href="https://sofialoginova1.github.io/koerakostuumid1/">Koera kostüümid</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+        <a href="https://prikoljuha.github.io/ITI0105-2023-avaleht/" class="btn knopka" style="background-color: #BD52E3">
+        <i class="bi bi-house"></i>
+        </a>
+        <a href="https://sofialoginova1.github.io/konto/" class="btn knopka" style="background-color: #BD52E3">
+        <i class="bi bi-person"></i>
+        </a>
+        <a href="link_to_handbag" class="btn knopka" style="background-color: #BD52E3">
+        <i class="bi bi-handbag"></i>
+        </a>
+        <button class="btn knopka" type="button" id="searchButton" style="background-color: #BD52E3">
+                    <i class="bi bi-search"></i>
+                </button>
+</div>
+            <div class="dropdown-menu dropdown-menu-end" id="menuContent" aria-labelledby="searchButton">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Leia sobiv toode" aria-label="Search">
+                    <button class="btn knopka" type="submit" style="background-color: #E6BBF6">
+                        Otsi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+    const searchButton = document.getElementById("searchButton");
+const menuContent = document.getElementById("menuContent");
+const searchInput = document.querySelector('form[role="search"] input');
+const searchButtonInMenu = document.querySelector('form[role="search"] button');
+
+searchButton.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menuContent.style.display = menuContent.style.display === "none" ? "block" : "none";
+});
+
+searchInput.addEventListener("click", function (e) {
+    e.stopPropagation();
+});
+
+searchButtonInMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+});
+
+document.addEventListener("click", function () {
+    menuContent.style.display = "none";
+});
+</script>
+
+</body>
+<div class="product-container">
+        <div class="product-image-container">
+            <img class="product-image" src="https://www.purecostumes.com/mm5/graphics/00000001/R200606_full_1_460x697.jpg" alt="Image">
+        </div>
+        <div class="product-info">
+            <h2>"Roosa parukas" Kostüüm</h2>
+            <p>Roosa parukas kassile.</p>
+            <h2>10€</h2>
+            <div class="size-selector">
+                <p>Vali suurus:
+                <button class="select-size-buttons" onclick="selectSize(this)">XS</button>
+                <button class="select-size-buttons" onclick="selectSize(this)">S</button>
+                <button class="select-size-buttons" onclick="selectSize(this)">M</button>
+                <button class="select-size-buttons" onclick="selectSize(this)">L</button>
+                <button class="select-size-buttons" onclick="selectSize(this)">XL</button>
+                </p>
+            </div>
+
+            <button class="add-to-cart-button">Lisa ostukorvi</button>
+        </div>
+    </div>
+<script>
+       var activeButton = null;
+
+        function selectSize(button) {
+            if (activeButton === button) {
+                button.classList.remove("active");
+                activeButton = null;
+            } else {
+                if (activeButton) {
+                    activeButton.classList.remove("active");
+                }
+                button.classList.add("active");
+                activeButton = button;
+            }}
+    </script>
+</html>
